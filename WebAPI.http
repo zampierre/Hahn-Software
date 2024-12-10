@@ -1,6 +1,46 @@
-@WebAPI_HostAddress = http://localhost:5076
+# @WeatherApi_HostAddress = http://localhost:5176
 
-GET {{WebAPI_HostAddress}}/weatherforecast/
+# GET {{WeatherApi_HostAddress}}/weatherforecast/
+# Accept: application/json
+
+
+@WeatherApi_HostAddress = http://localhost:5176
+
+GET {{WeatherApi_HostAddress}}/api/weather
 Accept: application/json
 
 ###
+
+GET {{WeatherApi_HostAddress}}/api/weather/{id}
+Accept: application/json
+
+###
+
+POST {{WeatherApi_HostAddress}}/api/weather
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 0,
+  "date": "2024-12-10T00:00:00",
+  "temperatureC": 22,
+  "summary": "Sunny"
+}
+
+###
+
+PUT {{WeatherApi_HostAddress}}/api/weather/{id}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "date": "2024-12-10T00:00:00",
+  "temperatureC": 25,
+  "summary": "Partly Cloudy"
+}
+
+###
+
+DELETE {{WeatherApi_HostAddress}}/api/weather/{id}
+Accept: application/json
